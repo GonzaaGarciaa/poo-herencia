@@ -1,0 +1,36 @@
+# Creando la clase padre
+
+class Persona():
+    def __init__(self, edad, nombre, telefono):
+        self.edad = edad
+        self.nombre = nombre
+        self.telefono = telefono
+        
+
+# Clase hija cliente
+class Cliente(Persona):
+    def __init__(self, edad, nombre, telefono, credito):
+        super().__init__(edad, nombre, telefono)
+        self.credito = credito
+        
+    def caracteristicas(self):
+        return (f"Mi nombre es {self.nombre} tengo {self.edad} años \nMi telefono es {self.telefono} y tengo {self.credito} de credito\n")
+
+cliente_1 = Cliente(27, 'Gonzalo', 470420, 100000)
+
+print(cliente_1.caracteristicas())
+
+
+# Clase hija trabajador
+class Trabajador(Persona):
+    def __init__(self, edad, nombre, telefono, salario):
+        super().__init__(edad, nombre, telefono)
+        self.salario = salario
+        
+    def caracteristicas(self):
+        return (f"Mi nombre es {self.nombre} tengo {self.edad} años \nMi telefono es {self.telefono} y tengo un salario de ${self.salario}\n")
+
+
+trabajador_1 = Trabajador(30,'Roberto',514725,7000)
+
+print(trabajador_1.caracteristicas())
